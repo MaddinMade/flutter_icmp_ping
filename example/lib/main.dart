@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
         ping = Ping(
           'google.com',
           count: 3,
-          timeout: 1,
-          interval: 1,
+          timeout: Duration(seconds: 1),
+          interval: Duration(seconds: 1),
           ipv6: false,
         );
         ping.stream.listen((event) {

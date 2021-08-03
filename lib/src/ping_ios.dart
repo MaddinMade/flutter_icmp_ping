@@ -9,8 +9,8 @@ import 'package:flutter_icmp_ping/src/models/ping_summary.dart';
 
 class PingiOS extends BasePing {
   PingiOS(
-      String host, int? count, double? interval, double? timeout, bool? ipv6)
-      : super(host, count, interval, timeout, ipv6);
+      String host, int? count, Duration? interval, Duration? timeout, bool? ipv6, int? size, int? ttl, bool? fragment)
+      : super(host, count, interval, timeout, ipv6, size, ttl, fragment);
 
   static const _channelName = 'flutter_icmp_ping';
   static const _methodCh = MethodChannel('$_channelName/method');

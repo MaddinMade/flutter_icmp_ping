@@ -18,12 +18,12 @@ export 'package:flutter_icmp_ping/src/models/ping_summary.dart';
 
 class Ping {
   Ping(String host,
-      {int? count, double? interval, double? timeout, bool? ipv6}) {
+      {int? count, Duration? interval, Duration? timeout, bool? ipv6, int? size, int? ttl, bool? fragment}) {
     if (defaultTargetPlatform == TargetPlatform.iOS) {
-      _ping = PingiOS(host, count, interval, timeout, ipv6);
+      _ping = PingiOS(host, count, interval, timeout, ipv6, size, ttl, fragment);
     }
     if (defaultTargetPlatform == TargetPlatform.android) {
-      _ping = PingAndroid(host, count, interval, timeout, ipv6);
+      _ping = PingAndroid(host, count, interval, timeout, ipv6, size, ttl, fragment);
     }
   }
 
